@@ -13,9 +13,12 @@ target
 pom.xml.*
 release.properties
 
+.gradle
 .idea
 *.iml
 classes
+.build
+local.properties
 
 obj
 
