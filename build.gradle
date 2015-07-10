@@ -7,11 +7,16 @@ buildscript {
     }
 }
 
+//add java to the project
 apply plugin : 'java'
-apply plugin : 'eclipse'
+
+//make your .jar a executable jar
 apply plugin: 'application'
+
+//make your .jar a "fat" jar with some standalone server app
 apply plugin: 'spring-boot'
 
+//add maven dependencies
 repositories {
     mavenCentral()
 }
@@ -25,11 +30,15 @@ dependencies {
     testCompile("junit:junit")
 }
 
+//jar file versioning and base name
 jar {
     baseName = 'gs-gradle'
     version =  '0.1.0'
 }
 
+//this wrapper will let you build the app with ./gradlew without need to configure gradle on your computer.
+//the person who created the project first have already put the following to the build.gradle and
+//ran 'gradle wrapper' to create gradlew.sh and gradlew.bat
 task wrapper(type: Wrapper) {
     gradleVersion = '2.5'
 }
